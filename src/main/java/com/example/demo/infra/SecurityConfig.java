@@ -25,7 +25,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/cidadao/").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/cidadao/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/cidadao/").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/cidadao/{id}").permitAll()
                         .anyRequest().authenticated()
                 );
 

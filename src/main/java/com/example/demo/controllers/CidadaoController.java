@@ -29,8 +29,15 @@ public class CidadaoController {
     }
 
     @PostMapping("/")
-    public Cidadao criarCidadao(@RequestBody @Valid Cidadao cidadao) {
-        return cidadaoRepository.save(cidadao);
+    public ResponseEntity<Cidadao> criarCidadao(@RequestBody @Valid Cidadao cidadao) {
+        Cidadao novoCidadao = cidadaoService.criarCidadao(cidadao);
+        return new ResponseEntity<>(novoCidadao, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Cidadao> encontrarCidadaoPorId(@PathVariable Long id) {
+        Cidadao cidadao = cidadaoService.encontrarCidadaoPorId(id);
+        return new ResponseEntity<>(cidadao, HttpStatus.OK);
     }
 
 }

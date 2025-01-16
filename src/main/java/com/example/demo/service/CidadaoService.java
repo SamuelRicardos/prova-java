@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CidadaoService {
@@ -18,12 +19,10 @@ public class CidadaoService {
     }
 
     public Cidadao criarCidadao(Cidadao cidadao) {
-        Cidadao novoCidadao = new Cidadao();
-        novoCidadao.setNome(cidadao.getNome());
-        novoCidadao.setCpf(cidadao.getCpf());
-        novoCidadao.setEndereco(cidadao.getEndereco());
-        novoCidadao.setSexo(cidadao.getSexo());
+        return cidadaoRepository.save(cidadao);
+    }
 
-        return novoCidadao;
+    public Cidadao encontrarCidadaoPorId(Long id) {
+        return cidadaoRepository.findById(id).orElseThrow(() -> new RuntimeException("Cidadão não encontrado com o ID: " + id));
     }
 }
