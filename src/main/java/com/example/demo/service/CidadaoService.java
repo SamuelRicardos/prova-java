@@ -16,4 +16,14 @@ public class CidadaoService {
     public List<Cidadao> listarCidadaos() {
         return cidadaoRepository.findAll();
     }
+
+    public Cidadao criarCidadao(Cidadao cidadao) {
+        Cidadao novoCidadao = new Cidadao();
+        novoCidadao.setNome(cidadao.getNome());
+        novoCidadao.setCpf(cidadao.getCpf());
+        novoCidadao.setEndereco(cidadao.getEndereco());
+        novoCidadao.setSexo(cidadao.getSexo());
+
+        return novoCidadao;
+    }
 }
