@@ -40,4 +40,10 @@ public class CidadaoController {
         return new ResponseEntity<>(cidadao, HttpStatus.OK);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Cidadao> alterarDadosCidadao(@PathVariable Long id, @RequestBody Cidadao cidadaoAtualizado) {
+        Cidadao cidadaoAlterado = cidadaoService.alterarDadosCidadao(id, cidadaoAtualizado);
+        return new ResponseEntity<>(cidadaoAlterado, HttpStatus.OK);
+    }
+
 }
