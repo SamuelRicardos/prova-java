@@ -27,7 +27,7 @@ public class CidadaoService {
     }
 
     public Cidadao alterarDadosCidadao(Long id, Cidadao cidadaoAtualizado) {
-        Cidadao cidadaoExistente = cidadaoRepository.findById(id).orElseThrow(() -> new RuntimeException("Cidadão não encontrado com o ID: " + id));  // Lança exceção caso não encontrado
+        Cidadao cidadaoExistente = cidadaoRepository.findById(id).orElseThrow(() -> new RuntimeException("Cidadão não encontrado com o ID: " + id));
 
         cidadaoExistente.setNome(cidadaoAtualizado.getNome());
         cidadaoExistente.setCpf(cidadaoAtualizado.getCpf());
@@ -35,5 +35,10 @@ public class CidadaoService {
         cidadaoExistente.setSexo(cidadaoAtualizado.getSexo());
 
         return cidadaoRepository.save(cidadaoExistente);
+    }
+
+    public void deletarDadosCidadao(Long id) {
+        Cidadao cidadaoDeletado = cidadaoRepository.findById(id).orElseThrow(() -> new RuntimeException("Cidadão não encontrado com o ID:" + id));
+        cidadaoRepository.delete(cidadaoDeletado);
     }
 }

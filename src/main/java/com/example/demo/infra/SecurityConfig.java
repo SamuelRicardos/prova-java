@@ -28,6 +28,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/cidadao/{id}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/cidadao/").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/cidadao/{id}").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/cidadao/{id}").permitAll()
                         .anyRequest().authenticated()
                 );
 

@@ -35,15 +35,21 @@ public class CidadaoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Cidadao> encontrarCidadaoPorId(@PathVariable Long id) {
+    public ResponseEntity<Cidadao> encontrarCidadaoPorId(@PathVariable("id") Long id) {
         Cidadao cidadao = cidadaoService.encontrarCidadaoPorId(id);
         return new ResponseEntity<>(cidadao, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Cidadao> alterarDadosCidadao(@PathVariable Long id, @RequestBody Cidadao cidadaoAtualizado) {
-        Cidadao cidadaoAlterado = cidadaoService.alterarDadosCidadao(id, cidadaoAtualizado);
+    public ResponseEntity<Cidadao> alterarDadosCidadao(@PathVariable("id") Long id, @RequestBody Cidadao cidadao) {
+        Cidadao cidadaoAlterado = cidadaoService.alterarDadosCidadao(id, cidadao);
         return new ResponseEntity<>(cidadaoAlterado, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Cidadao> deletarCidadao(@PathVariable("id") Long id) {
+        cidadaoService.deletarDadosCidadao(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
