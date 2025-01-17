@@ -28,7 +28,7 @@ Este projeto é um crud desenvolvido em Java utilizando o framework **Spring Boo
 3. Para acessar o banco de dados H2, abra o navegador e vá para:  
    [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 
-4. Faça login utilizando as credenciais configuradas no arquivo `application.properties`:  
+4. Faça login no H2 utilizando as credenciais configuradas no arquivo `application.properties`:  
    - **Usuário:** `samuel`  
    - **Senha:** `1234`  
 
