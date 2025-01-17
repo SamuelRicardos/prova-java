@@ -1,10 +1,10 @@
-# Projeto de API em Java com Spring Boot
+# Crud em Java com Spring Boot - FACULDADE UNYLEYA | PROVA PÓS GRADUAÇÃO
 
-Este projeto é uma API desenvolvida em Java utilizando o framework **Spring Boot**. A aplicação utiliza um banco de dados em memória (**H2**) e conta com segurança implementada através do **Spring Security**. O **Hibernate** e o **JPA** são utilizados para gerenciar a persistência de dados.
+Este projeto é um crud desenvolvido em Java utilizando o framework **Spring Boot**. A aplicação utiliza um banco de dados em memória (**H2**) e conta com segurança implementada através do **Spring Security**. O **Hibernate** e o **JPA** são utilizados para gerenciar a persistência de dados.
 
 ## Funcionalidades
 
-- Cadastro e listagem de cidadãos.
+- Listar todos os cidadãos, listar um cidadão escolhido, cadastrar, deletar e alterar cidadãos.
 - Segurança com autenticação por formulário (Spring Security).
 - Banco de dados H2 acessível via console.
 - Configuração para inicialização rápida e fácil.
