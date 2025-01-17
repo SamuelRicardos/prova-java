@@ -2,6 +2,20 @@
 
 Este projeto é um crud desenvolvido em Java utilizando o framework **Spring Boot**. A aplicação utiliza um banco de dados em memória (**H2**) e conta com segurança implementada através do **Spring Security**. O **Hibernate** e o **JPA** são utilizados para gerenciar a persistência de dados.
 
+## Estrutura do projeto
+src/
+├── main/
+│   ├── java/
+│   │   └── com.example.demo/
+│   │       ├── controllers/        # Contém os controladores REST
+│   │       ├── model/              # Contém as entidades JPA
+│   │       ├── repository/         # Contém os repositórios JPA
+│   │       ├── service/            # Contém as regras de negócio
+│   │       └── infra/              # Configurações do Spring (Security, etc.)
+│   └── resources/
+│       ├── application.properties  # Configurações da aplicação
+│       └── static/                 # Recursos estáticos (HTML, CSS, JS)
+
 ## Funcionalidades
 
 - Listar todos os cidadãos, listar um cidadão escolhido, cadastrar, deletar e alterar cidadãos.
@@ -40,19 +54,5 @@ Este projeto é um crud desenvolvido em Java utilizando o framework **Spring Boo
    - Inicialmente, a tabela estará vazia.  
    - Utilize os endpoints da API no Postman para adicionar novos registros.  
    - Após inserir dados, clique novamente em **RUN** no console H2 para atualizar e visualizar as informações.
-
-## Estrutura do projeto
-src/
-├── main/
-│   ├── java/
-│   │   └── com.example.demo/
-│   │       ├── controllers/        # Contém os controladores REST
-│   │       ├── model/              # Contém as entidades JPA
-│   │       ├── repository/         # Contém os repositórios JPA
-│   │       ├── service/            # Contém as regras de negócio
-│   │       └── infra/              # Configurações do Spring (Security, etc.)
-│   └── resources/
-│       ├── application.properties  # Configurações da aplicação
-│       └── static/                 # Recursos estáticos (HTML, CSS, JS)
 
 
